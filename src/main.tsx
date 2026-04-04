@@ -1,0 +1,1 @@
+// Landing page is pure HTML/JS in index.html. React is not used.

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hygia | Purificação e Estética Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#050505',
+                        darker: '#0a0a0a',
+                        hygia: {
+                            blue: '#0ea5e9',
+                            green: '#10b981'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; color: #ffffff; overflow-x: hidden; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .text-gradient { background: linear-gradient(to right, #0ea5e9, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .bg-gradient-hygia { background: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%); }
+        .marquee-container { overflow: hidden; white-space: nowrap; width: 100%; display: flex; }
+        .marquee-content { display: flex; animation: marquee 20s linear infinite; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .hero-overlay { background: linear-gradient(to bottom, rgba(5,5,5,0.3) 0%, rgba(5,5,5,1) 100%); }
+    </style>
+</head>
+<body class="antialiased selection:bg-hygia-blue selection:text-white">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="glass rounded-2xl px-6 py-3 flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <svg class="w-6 h-6 text-hygia-blue" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                    <span class="font-display font-bold text-xl tracking-wider">HYGIA</span>
+                </div>
+                <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+                    <a href="#diferenciais" class="hover:text-white transition-colors">Diferenciais</a>
+                    <a href="#servicos" class="hover:text-white transition-colors">Serviços</a>
+                    <a href="#depoimentos" class="hover:text-white transition-colors">Depoimentos</a>
+                </nav>
+                <a href="https://wa.me/5594981268102?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20higieniza%C3%A7%C3%A3o%2Fimpermeabiliza%C3%A7%C3%A3o." target="_blank" class="bg-white text-dark px-5 py-2 rounded-full text-sm font-semibold hover:bg-gray-200 transition-colors">Agendar</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center pt-20">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Interior luxuoso" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+            <div class="max-w-3xl">
+                <div class="hero-elem inline-block border border-hygia-blue/30 bg-hygia-blue/10 text-hygia-blue px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-6">
+                    Purificação de Alto Padrão
+                </div>
+                <h1 class="hero-elem font-display text-5xl md:text-7xl font-bold leading-[1.1] mb-6 tracking-tight">
+                    O santuário da sua família merece <span class="text-gradient">pureza absoluta.</span>
+                </h1>
+                <p class="hero-elem text-lg md:text-xl text-gray-400 mb-10 max-w-2xl font-light leading-relaxed">
+                    Elevamos a saúde e o conforto do seu lar e veículo com tecnologia de ponta em higienização e impermeabilização, <strong>eliminando ácaros, fungos e bactérias</strong>. Mais que limpeza, purificação.
+                </p>
+                <div class="hero-elem flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/5594981268102?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20higieniza%C3%A7%C3%A3o%2Fimpermeabiliza%C3%A7%C3%A3o." target="_blank" class="bg-gradient-hygia text-white px-8 py-4 rounded-full font-semibold text-center hover:shadow-[0_0_30px_rgba(14,165,233,0.3)] transition-all duration-300">
+                        Solicitar Avaliação Premium
+                    </a>
+                    <a href="#servicos" class="glass text-white px-8 py-4 rounded-full font-semibold text-center hover:bg-white/10 transition-all duration-300">
+                        Conhecer Serviços
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <section class="py-10 border-y border-white/5 bg-darker overflow-hidden">
+        <div class="marquee-container">
+            <div class="marquee-content items-center gap-16 px-8 text-gray-500 font-display font-semibold text-xl tracking-widest uppercase">
+                <span>Eliminação de Ácaros e Bactérias</span>
+                <span>•</span>
+                <span>Secagem Rápida</span>
+                <span>•</span>
+                <span>Certificação Internacional</span>
+                <span>•</span>
+                <span>Zero Bagunça</span>
+                <span>•</span>
+                <span>Garantia de Satisfação</span>
+                <span>•</span>
+                <span>Eliminação de Ácaros e Bactérias</span>
+                <span>•</span>
+                <span>Secagem Rápida</span>
+                <span>•</span>
+                <span>Certificação Internacional</span>
+                <span>•</span>
+                <span>Zero Bagunça</span>
+                <span>•</span>
+                <span>Garantia de Satisfação</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais (Bento Grid) -->
+    <section id="diferenciais" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">A excelência mora <br><span class="text-gradient">nos detalhes.</span></h2>
+                <p class="text-gray-400 max-w-xl">Nosso compromisso vai além da estética. Cuidamos do seu patrimônio e da saúde da sua família com protocolos rigorosos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px]">
+                <!-- Bento 1 -->
+                <div class="glass rounded-3xl p-8 md:col-span-2 md:row-span-2 flex flex-col justify-end relative overflow-hidden group reveal">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=1974&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500" alt="Saúde">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 rounded-full bg-hygia-blue/20 flex items-center justify-center mb-6 border border-hygia-blue/30">
+                            <svg class="w-6 h-6 text-hygia-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold mb-2">Saúde em Primeiro Lugar</h3>
+                        <p class="text-gray-400">Eliminação comprovada de ácaros, fungos e bactérias. Essencial para a qualidade do sono e prevenção de alergias em crianças e pets.</p>
+                    </div>
+                </div>
+                
+                <!-- Bento 2 -->
+                <div class="glass rounded-3xl p-8 flex flex-col justify-between reveal">
+                    <div class="w-10 h-10 rounded-full bg-hygia-green/20 flex items-center justify-center border border-hygia-green/30">
+                        <svg class="w-5 h-5 text-hygia-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-xl font-bold mb-2">Secagem Rápida</h3>
+                        <p class="text-gray-400 text-sm">Tecnologia de extração avançada que permite o uso do estofado em poucas horas.</p>
+                    </div>
+                </div>
+
+                <!-- Bento 3 -->
+                <div class="glass rounded-3xl p-8 flex flex-col justify-between reveal">
+                    <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-xl font-bold mb-2">Zero Bagunça</h3>
+                        <p class="text-gray-400 text-sm">Proteção total do seu piso e móveis. Entramos, purificamos e saímos sem deixar rastros.</p>
+                    </div>
+                </div>
+
+                <!-- Bento 4 -->
+                <div class="glass rounded-3xl p-8 md:col-span-3 flex flex-col md:flex-row items-center justify-between gap-8 reveal overflow-hidden relative">
+                    <div class="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-hygia-blue/10 to-transparent"></div>
+                    <div class="relative z-10 md:w-2/3">
+                        <h3 class="font-display text-2xl font-bold mb-2">Atendimento Humanizado</h3>
+                        <p class="text-gray-400">Entendemos que sua casa é seu templo. Nossa equipe é treinada não apenas em técnicas de limpeza, mas em etiqueta e respeito ao seu espaço.</p>
+                    </div>
+                    <div class="relative z-10">
+                        <a href="https://wa.me/5594981268102?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20higieniza%C3%A7%C3%A3o%2Fimpermeabiliza%C3%A7%C3%A3o." target="_blank" class="inline-flex items-center gap-2 text-hygia-blue font-semibold hover:text-white transition-colors">
+                            Falar com especialista <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="py-32 bg-darker relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">Expertise em <span class="text-gradient">cada fibra.</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Soluções completas para ambientes residenciais e automotivos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Servico 1 -->
+                <div class="group reveal cursor-pointer">
+                    <div class="relative h-80 rounded-3xl overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Estofados">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500"></div>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-3">Estofados Residenciais</h3>
+                    <p class="text-gray-400">Sofás, colchões, poltronas e cabeceiras. Remoção de manchas difíceis, odores e <strong>eliminação total de ácaros e bactérias</strong>, devolvendo a maciez e o aspecto de novo.</p>
+                </div>
+
+                <!-- Servico 2 -->
+                <div class="group reveal cursor-pointer mt-0 md:mt-12">
+                    <div class="relative h-80 rounded-3xl overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Automotivo">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500"></div>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-3">Detalhamento Automotivo</h3>
+                    <p class="text-gray-400">Limpeza profunda de bancos (couro ou tecido), teto e interior completo. <strong>Eliminação de bactérias</strong> para um carro com cheiro e sensação de zero km.</p>
+                </div>
+
+                <!-- Servico 3 -->
+                <div class="group reveal cursor-pointer">
+                    <div class="relative h-80 rounded-3xl overflow-hidden mb-6">
+                        <img src="https://lh3.googleusercontent.com/d/1MeAm14hzopOjLf018p7zmcxNgzcjsiJ1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Impermeabilização">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500"></div>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-3">Impermeabilização Premium</h3>
+                    <p class="text-gray-400">Blindagem invisível contra líquidos e sujeiras. Aumenta a vida útil do tecido sem alterar a cor ou a textura.</p>
+                </div>
+
+                <!-- Servico 4 -->
+                <div class="group reveal cursor-pointer mt-0 md:mt-12">
+                    <div class="relative h-80 rounded-3xl overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Itens Infantis">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500"></div>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold mb-3">Linha Baby</h3>
+                    <p class="text-gray-400">Higienização atóxica e segura para carrinhos de bebê e bebê conforto. Proteção máxima para quem você mais ama.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="py-32 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-hygia-blue/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="mb-16 reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold mb-4">Aprovado por quem <br><span class="text-gradient">exige o melhor.</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass p-10 rounded-3xl reveal">
+                    <div class="flex text-hygia-green mb-6">
+                        ★★★★★
+                    </div>
+                    <p class="text-lg text-gray-300 mb-8 font-light italic">"Com duas crianças e um Golden Retriever, meu sofá claro estava irreconhecível. A equipe da Hygia não só limpou, mas devolveu o aspecto de novo. O cuidado com o piso da minha sala durante o serviço foi excepcional."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center font-display font-bold">MS</div>
+                        <div>
+                            <h4 class="font-bold">Mariana S.</h4>
+                            <p class="text-sm text-gray-500">Higienização de Sofá e Tapetes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass p-10 rounded-3xl reveal">
+                    <div class="flex text-hygia-green mb-6">
+                        ★★★★★
+                    </div>
+                    <p class="text-lg text-gray-300 mb-8 font-light italic">"Sou extremamente exigente com meu carro. O detalhamento interno que fizeram superou minhas expectativas. Bancos de couro hidratados e o teto impecável. Profissionalismo do início ao fim."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center font-display font-bold">RC</div>
+                        <div>
+                            <h4 class="font-bold">Roberto C.</h4>
+                            <p class="text-sm text-gray-500">Detalhamento Automotivo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section id="contato" class="py-32 bg-gradient-to-b from-dark to-darker border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-6 text-center reveal">
+            <h2 class="font-display text-4xl md:text-6xl font-bold mb-8">Pronto para renovar <br>seu ambiente?</h2>
+            <p class="text-xl text-gray-400 mb-10 font-light">Agende uma avaliação sem compromisso e descubra o padrão Hygia de purificação.</p>
+            <a href="https://wa.me/5594981268102?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20higieniza%C3%A7%C3%A3o%2Fimpermeabiliza%C3%A7%C3%A3o." target="_blank" class="inline-block bg-gradient-hygia text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-[0_0_40px_rgba(16,185,129,0.4)] transition-all duration-300 transform hover:-translate-y-1">
+                Falar com Atendimento via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-white/5 bg-darker text-center">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-hygia-blue" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                <span class="font-display font-bold tracking-wider">HYGIA</span>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
+                <a href="https://instagram.com/hygia_maraba" target="_blank" class="text-gray-400 hover:text-hygia-blue transition-colors flex items-center gap-2 text-sm">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    @hygia_maraba
+                </a>
+                <a href="https://maps.app.goo.gl/XJgxUrVSKciRWyHV6" target="_blank" class="text-gray-400 hover:text-hygia-green transition-colors flex items-center gap-2 text-sm">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    Marabá, PA
+                </a>
+            </div>
+
+            <p class="text-sm text-gray-600 hidden md:block">© 2026 Hygia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Navbar blur on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-dark/50', 'backdrop-blur-lg');
+            } else {
+                nav.classList.remove('bg-dark/50', 'backdrop-blur-lg');
+            }
+        });
+
+        // Hero Animation
+        const tl = gsap.timeline();
+        tl.from('.hero-elem', {
+            y: 40,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.15,
+            ease: 'power3.out',
+            delay: 0.2
+        });
+
+        // Reveal Elements on Scroll
+        gsap.utils.toArray('.reveal').forEach(element => {
+            gsap.from(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    start: 'top 85%',
+                    toggleActions: 'play none none reverse'
+                },
+                y: 40,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out'
+            });
+        });
+    </script>
+</body>
+</html>
